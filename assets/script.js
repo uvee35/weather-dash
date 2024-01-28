@@ -129,3 +129,12 @@ function updateSearchHistory(city) {
         displaySearchHistory();
     }
 }
+
+// Load and display search history from localStorage
+function loadSearchHistory() {
+    var savedHistory = localStorage.getItem("weatherSearchHistory");
+    if (savedHistory) {
+        searchHistory = JSON.parse(savedHistory);
+        displaySearchHistory();
+    }
+}
