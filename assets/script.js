@@ -50,3 +50,16 @@ function fetchCoordinates(city) {
         })
         .catch(error => alert("Unable to connect to weather service."));
 }
+
+// Fetch weather data based on coordinates
+function fetchWeatherData(latitude, longitude, cityName) {
+    var weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${myApiKey}&units=metric`;
+    fetch(weatherApiUrl)
+        .then(response => response.json())
+        .then(data => {
+            displayCurrentWeather(data, cityName);
+            displayWeatherForecast(data);
+            updateSearchHistory(cityName);
+        })
+        .catch(error => alert("Unable to retrieve weather data."));
+}
