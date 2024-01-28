@@ -63,3 +63,27 @@ function fetchWeatherData(latitude, longitude, cityName) {
         })
         .catch(error => alert("Unable to retrieve weather data."));
 }
+
+// Display current weather data
+function displayCurrentWeather(data, cityName) {
+    var currentWeather = data.list[0];
+    var weatherIcon = currentWeather.weather[0].icon; // Get the weather icon code
+    var weatherDescription = currentWeather.weather[0].description; // Get the weather description
+    var temperature = currentWeather.main.temp; // Temperature in Celsius
+
+    var weatherHTML = `
+        <h2>Current Weather in ${cityName}</h2>
+        <div class="weather-info">
+            <img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="${weatherDescription}">
+            <p><strong>Temperature:</strong> ${temperature}°C</p>
+        </div>
+        <p><strong>Humidity:</strong> ${currentWeather.main.humidity}%</p>
+        <p><strong>Wind Speed:</strong> ${currentWeather.wind.speed} m/s</p>
+        <p><strong>Weather Conditions:</strong> ${capitalizeFirstLetter(weatherDescription)}</p>
+    `;
+    currentWeatherContainer.innerHTML = weatherHTML;
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
