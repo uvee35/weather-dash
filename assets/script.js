@@ -87,3 +87,36 @@ function displayCurrentWeather(data, cityName) {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+
+// Function to display weather forecast data using Bootstrap cards
+function displayWeatherForecast(data) {
+    weatherForecastContainer.innerHTML = ''; 
+
+    var forecastHTML = '<div class="card-deck">'; 
+    for (var i = 0; i < data.list.length; i += 8) { 
+        var dayForecast = data.list[i];
+        var date = new Date(dayForecast.dt_txt).toLocaleDateString();
+        var temp = dayForecast.main.temp;
+        var wind = dayForecast.wind.speed;
+        var humidity = dayForecast.main.humidity;
+        var weatherIcon = dayForecast.weather[0].icon; 
+        var weatherDescription = dayForecast.weather[0].description; 
+
+        // Create card HTML for each forecast day
+        forecastHTML += `
+            <div class="card text-center bg-light mb-3">
+                <div class="card-header">${date}</div>
+                <div class="card-body">
+                    <img src="https://openweathermap.org/img/wn/${weatherIcon}.png" alt="${weatherDescription}" class="weather-icon">
+                    <h5 class="card-title">${temp} °C</h5>
+                    <p class="card-text">Weather: ${capitalizeFirstLetter(weatherDescription)}</p>
+                    <p class="card-text">Wind: ${wind} m/s</p>
+                    <p class="card-text">Humidity: ${humidity}%</p>
+                </div>
+            </div>
+        `;
+    }
+    forecastHTML += '</div>'; // Close the card-deck div
+    weatherForecastContainer.innerHTML = forecastHTML; // Insert the forecast cards HTML into the forecast container
+}
