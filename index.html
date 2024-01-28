@@ -5,7 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="stylesheet" href="./assets/style.css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+
   <title>Weather Dashboard</title>
 </head>
 
@@ -27,9 +30,9 @@
               <input class="form-input weather-search" type="text" id="search-input" placeholder="London"
                 aria-labelledby="form-heading" aria-controls="today forecast" />
               <div class="input-group-append">
-                <button type="submit" class="btn search-button" id="search-button" aria-label="submit search">
-                  Search
-                </button>
+                <button type="submit" class="btn btn-primary search-button" id="search-button" aria-label="submit search">
+  Search
+</button>
                 <hr class="hr weather-hr" />
               </div>
             </div>
@@ -44,6 +47,13 @@
       </div>
     </div>
   </div>
+  
+ <div class="container">
+        <div id="forecast">
+          
+            <!-- Weather forecast cards will be displayed here -->
+        </div>
+    </div>
 
   <!-- Day.js -->
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
@@ -53,3 +63,4 @@
 </body>
 
 </html>
+
