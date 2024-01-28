@@ -30,3 +30,8 @@ function handleSearchFormSubmit(event) {
         alert("Please enter a city name.");
     }
 }
+
+// Search city and retrieve weather data
+function searchCity(cityName) {
+    fetchCoordinates(cityName);
+}
