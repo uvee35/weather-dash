@@ -10,7 +10,7 @@ The Weather Dashboard App is a dynamic web application that allows users to view
 As a traveler, I want to see the weather outlook for multiple cities, so that I can plan my trip accordingly.
 
 ## Mock-Up
-
+https://uvee35.github.io/weather-dash/
 
 ## Technologies Used
 
