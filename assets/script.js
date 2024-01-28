@@ -8,3 +8,11 @@ var searchButton = document.querySelector("#search-button");
 var currentWeatherContainer = document.querySelector("#today");
 var weatherForecastContainer = document.querySelector("#forecast");
 var searchHistoryContainer = document.querySelector("#history");
+
+// Search history array
+var searchHistory = [];
+
+// Event listeners
+searchForm.addEventListener("submit", handleSearchFormSubmit);
+searchButton.addEventListener("click", handleSearchFormSubmit);
+
