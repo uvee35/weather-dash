@@ -16,3 +16,17 @@ var searchHistory = [];
 searchForm.addEventListener("submit", handleSearchFormSubmit);
 searchButton.addEventListener("click", handleSearchFormSubmit);
 
+// Load search history on page load
+loadSearchHistory();
+
+// Handle search form submission
+function handleSearchFormSubmit(event) {
+    event.preventDefault();
+    var city = searchInput.value.trim();
+    if (city) {
+        searchCity(city);
+        searchInput.value = "";
+    } else {
+        alert("Please enter a city name.");
+    }
+}
