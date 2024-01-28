@@ -35,3 +35,18 @@ function handleSearchFormSubmit(event) {
 function searchCity(cityName) {
     fetchCoordinates(cityName);
 }
+
+// Fetch coordinates of the city
+function fetchCoordinates(city) {
+    var coordinatesUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${myApiKey}`;
+    fetch(coordinatesUrl)
+        .then(response => response.json())
+        .then(data => {
+            if (data.length) {
+                fetchWeatherData(data[0].lat, data[0].lon, city);
+            } else {
+                alert("City not found.");
+            }
+        })
+        .catch(error => alert("Unable to connect to weather service."));
+}
