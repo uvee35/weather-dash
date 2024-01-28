@@ -138,3 +138,16 @@ function loadSearchHistory() {
         displaySearchHistory();
     }
 }
+
+
+// Display search history
+function displaySearchHistory() {
+    searchHistoryContainer.innerHTML = '';
+    searchHistory.forEach(city => {
+        var historyItem = document.createElement('button');
+        historyItem.textContent = city;
+        historyItem.className = 'history-item';
+        historyItem.addEventListener('click', () => searchCity(city));
+        searchHistoryContainer.appendChild(historyItem);
+    });
+}
