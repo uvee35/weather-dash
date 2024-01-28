@@ -120,3 +120,12 @@ function displayWeatherForecast(data) {
     forecastHTML += '</div>'; // Close the card-deck div
     weatherForecastContainer.innerHTML = forecastHTML; // Insert the forecast cards HTML into the forecast container
 }
+
+// Update and display search history
+function updateSearchHistory(city) {
+    if (!searchHistory.includes(city)) {
+        searchHistory.push(city);
+        localStorage.setItem("weatherSearchHistory", JSON.stringify(searchHistory));
+        displaySearchHistory();
+    }
+}
