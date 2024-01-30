@@ -28,7 +28,7 @@ https://uvee35.github.io/weather-dash/
 
 To use the Weather Dashboard App, follow these steps:
 
-1. Visit the Live URL: []
+1. Visit the Live URL: [https://uvee35.github.io/weather-dash/]
 2. Search for a city to view its current and future weather conditions.
 
 ## Usage
