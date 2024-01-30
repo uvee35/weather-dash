@@ -12,6 +12,8 @@ As a traveler, I want to see the weather outlook for multiple cities, so that I 
 ## Mock-Up
 https://uvee35.github.io/weather-dash/
 
+<img width="1998" alt="Screenshot 2024-01-30 at 12 54 11" src="https://github.com/uvee35/weather-dash/assets/151088688/7ec6b2cc-3cc0-4353-ae3f-9f1c148594a8">
+
 ## Technologies Used
 
 - HTML/CSS: For building the user interface and styling.
